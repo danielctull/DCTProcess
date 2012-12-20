@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2454E62916832CA600CAF550 /* DCTProcessContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2454E62816832CA600CAF550 /* DCTProcessContext.m */; };
+		2454E63816832FC300CAF550 /* DCTProcessContext.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2454E62716832CA600CAF550 /* DCTProcessContext.h */; };
 		24D1C40516829E87005E52C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D1C40416829E87005E52C4 /* Foundation.framework */; };
 		24D1C40A16829E87005E52C4 /* DCTProcess.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24D1C40916829E87005E52C4 /* DCTProcess.h */; };
 		24D1C40C16829E87005E52C4 /* DCTProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D1C40B16829E87005E52C4 /* DCTProcess.m */; };
@@ -36,6 +37,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				2454E63816832FC300CAF550 /* DCTProcessContext.h in CopyFiles */,
 				24D1C40A16829E87005E52C4 /* DCTProcess.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
