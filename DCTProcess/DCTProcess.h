@@ -15,11 +15,13 @@
 @property (readonly, assign) float progress;
 
 - (void)cancel;
-- (void)addCancellationHandler:(void(^)())cancellationHandler;
+- (void)observeCancellationOnQueue:(dispatch_queue_t)queue handler:(void(^)())handler;
 
 - (void)complete;
-- (void)addCompletionHandler:(void(^)())completionHandler;
+- (void)observeCompletionOnQueue:(dispatch_queue_t)queue handler:(void (^)())handler;
 
 - (void)addSubprocess:(DCTProcess *)subprocess;
+
++ (NSPredicate *)predicateForProcessWithIdentifier:(NSString *)identifier;
 
 @end

@@ -62,12 +62,14 @@
 	});
 }
 
-- (void)addCompletionHandler:(void (^)())completionHandler {
-	dispatch_group_notify(_completionGroup, _queue, completionHandler);
+- (void)observeCompletionOnQueue:(dispatch_queue_t)queue handler:(void (^)())handler {
+	if (queue == NULL) queue = _queue;
+	dispatch_group_notify(_completionGroup, queue, handler);
 }
 
-- (void)addCancellationHandler:(void(^)())cancellationHandler {
-	dispatch_group_notify(_cancellationGroup, _queue, cancellationHandler);
+- (void)observeCancellationOnQueue:(dispatch_queue_t)queue handler:(void(^)())handler {
+	if (queue == NULL) queue = _queue;
+	dispatch_group_notify(_cancellationGroup, queue, handler);
 }
 
 - (void)addSubprocess:(DCTProcess *)subprocess {
@@ -75,14 +77,22 @@
 	__weak DCTProcess *weakSelf = self;
 	__weak DCTProcess *weakSubprocess = subprocess;
 
-	[self addCancellationHandler:^{
+	[self observeCancellationOnQueue:_queue handler:^{
 		[weakSubprocess cancel];
 	}];
 
 	[self _enterCompletion];
-	[subprocess addCompletionHandler:^{
+	[subprocess observeCompletionOnQueue:_queue handler:^{
 		[weakSelf _leaveCompletion];
 	}];
+}
+
++ (NSPredicate *)predicateForProcessWithIdentifier:(NSString *)identifier {
+	return [NSPredicate predicateWithFormat:@"identifier == %@", identifier];
+}
+
+- (NSString *)description {
+	return [NSString stringWithFormat:@"<%@: %p; identifier = %@>", NSStringFromClass([self class]), self, self.identifier];
 }
 
 @end

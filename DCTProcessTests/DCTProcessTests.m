@@ -17,7 +17,7 @@
 	__block BOOL completed = NO;
 	dispatch_group_t group = dispatch_group_create();
 	dispatch_group_enter(group);
-	[process addCompletionHandler:^{
+	[process observeCompletionOnQueue:NULL handler:^{
 		completed = YES;
 		dispatch_group_leave(group);
 	}];
@@ -40,7 +40,7 @@
 	__block BOOL completed = NO;
 	dispatch_group_t group = dispatch_group_create();
 	dispatch_group_enter(group);
-	[process addCompletionHandler:^{
+	[process observeCompletionOnQueue:NULL handler:^{
 		completed = YES;
 		dispatch_group_leave(group);
 	}];
