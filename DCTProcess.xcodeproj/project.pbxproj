@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2454E62916832CA600CAF550 /* DCTProcessContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2454E62816832CA600CAF550 /* DCTProcessContext.m */; };
 		24D1C40516829E87005E52C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D1C40416829E87005E52C4 /* Foundation.framework */; };
 		24D1C40A16829E87005E52C4 /* DCTProcess.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24D1C40916829E87005E52C4 /* DCTProcess.h */; };
 		24D1C40C16829E87005E52C4 /* DCTProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D1C40B16829E87005E52C4 /* DCTProcess.m */; };
@@ -42,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2454E62716832CA600CAF550 /* DCTProcessContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTProcessContext.h; sourceTree = "<group>"; };
+		2454E62816832CA600CAF550 /* DCTProcessContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTProcessContext.m; sourceTree = "<group>"; };
 		24D1C40116829E87005E52C4 /* libDCTProcess.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCTProcess.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D1C40416829E87005E52C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24D1C40816829E87005E52C4 /* DCTProcess-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCTProcess-Prefix.pch"; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 			children = (
 				24D1C40916829E87005E52C4 /* DCTProcess.h */,
 				24D1C40B16829E87005E52C4 /* DCTProcess.m */,
+				2454E62716832CA600CAF550 /* DCTProcessContext.h */,
+				2454E62816832CA600CAF550 /* DCTProcessContext.m */,
 				24D1C40716829E87005E52C4 /* Supporting Files */,
 			);
 			path = DCTProcess;
@@ -244,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24D1C40C16829E87005E52C4 /* DCTProcess.m in Sources */,
+				2454E62916832CA600CAF550 /* DCTProcessContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +403,7 @@
 				24D1C42816829E87005E52C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24D1C42916829E87005E52C4 /* Build configuration list for PBXNativeTarget "DCTProcessTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +412,7 @@
 				24D1C42B16829E87005E52C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

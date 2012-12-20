@@ -25,3 +25,5 @@
 + (NSPredicate *)predicateForProcessWithIdentifier:(NSString *)identifier;
 
 @end
+
+#import "DCTProcessContext.h"
