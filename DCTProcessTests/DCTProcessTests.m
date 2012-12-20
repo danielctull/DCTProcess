@@ -7,26 +7,50 @@
 //
 
 #import "DCTProcessTests.h"
+#import <DCTProcess/DCTProcess.h>
 
 @implementation DCTProcessTests
 
-- (void)setUp
-{
-    [super setUp];
-    
-    // Set-up code here.
+- (void)testExample {
+
+	DCTProcess *process = [[DCTProcess alloc] initWithIdentifier:@"test"];
+	__block BOOL completed = NO;
+	dispatch_group_t group = dispatch_group_create();
+	dispatch_group_enter(group);
+	[process addCompletionHandler:^{
+		completed = YES;
+		dispatch_group_leave(group);
+	}];
+	[process complete];
+
+	// Wait 2 seconds, should be more than enough time
+	dispatch_group_wait(group, dispatch_time(DISPATCH_TIME_NOW, 2000000000));
+	STAssertTrue(completed, @"Process was not completed.");
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
-}
+- (void)testSubprocess {
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in DCTProcessTests");
+	DCTProcess *process = [[DCTProcess alloc] initWithIdentifier:@"parent"];
+	DCTProcess *subprocess = [[DCTProcess alloc] initWithIdentifier:@"child"];
+	[process addSubprocess:subprocess];
+
+	DCTProcess *subsubprocess = [[DCTProcess alloc] initWithIdentifier:@"grandchild"];
+	[subprocess addSubprocess:subsubprocess];
+
+	__block BOOL completed = NO;
+	dispatch_group_t group = dispatch_group_create();
+	dispatch_group_enter(group);
+	[process addCompletionHandler:^{
+		completed = YES;
+		dispatch_group_leave(group);
+	}];
+	[process complete];
+	[subprocess complete];
+	[subsubprocess complete];
+
+	// Wait 2 seconds, should be more than enough time
+	dispatch_group_wait(group, dispatch_time(DISPATCH_TIME_NOW, 2000000000));
+	STAssertTrue(completed, @"Process was not completed.");
 }
 
 @end

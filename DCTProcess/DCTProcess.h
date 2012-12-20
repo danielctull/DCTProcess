@@ -10,4 +10,16 @@
 
 @interface DCTProcess : NSObject
 
+- (id)initWithIdentifier:(NSString *)identifier;
+@property (readonly, copy) NSString *identifier;
+@property (readonly, assign) float progress;
+
+- (void)cancel;
+- (void)addCancellationHandler:(void(^)())cancellationHandler;
+
+- (void)complete;
+- (void)addCompletionHandler:(void(^)())completionHandler;
+
+- (void)addSubprocess:(DCTProcess *)subprocess;
+
 @end
