@@ -47,7 +47,6 @@
 		2454E62816832CA600CAF550 /* DCTProcessContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTProcessContext.m; sourceTree = "<group>"; };
 		24D1C40116829E87005E52C4 /* libDCTProcess.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCTProcess.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D1C40416829E87005E52C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		24D1C40816829E87005E52C4 /* DCTProcess-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCTProcess-Prefix.pch"; sourceTree = "<group>"; };
 		24D1C40916829E87005E52C4 /* DCTProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTProcess.h; sourceTree = "<group>"; };
 		24D1C40B16829E87005E52C4 /* DCTProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTProcess.m; sourceTree = "<group>"; };
 		24D1C41216829E87005E52C4 /* DCTProcessTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCTProcessTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,17 +117,8 @@
 				24D1C40B16829E87005E52C4 /* DCTProcess.m */,
 				2454E62716832CA600CAF550 /* DCTProcessContext.h */,
 				2454E62816832CA600CAF550 /* DCTProcessContext.m */,
-				24D1C40716829E87005E52C4 /* Supporting Files */,
 			);
 			path = DCTProcess;
-			sourceTree = "<group>";
-		};
-		24D1C40716829E87005E52C4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				24D1C40816829E87005E52C4 /* DCTProcess-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		24D1C41B16829E87005E52C4 /* DCTProcessTests */ = {
@@ -335,7 +325,6 @@
 			buildSettings = {
 				DSTROOT = /tmp/DCTProcess.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCTProcess/DCTProcess-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -347,7 +336,6 @@
 			buildSettings = {
 				DSTROOT = /tmp/DCTProcess.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCTProcess/DCTProcess-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
